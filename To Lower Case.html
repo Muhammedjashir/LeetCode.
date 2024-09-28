@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+// Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.
+
+// Example 1:
+
+// Input: s = "Hello"
+// Output: "hello"
+// Example 2:
+
+// Input: s = "here"
+// Output: "here"
+// Example 3:
+
+// Input: s = "LOVELY"
+// Output: "lovely"
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+ var toLowerCase = function(s) {
+    let result = ''
+    for (let i = 0; i< s.length; i++){
+        const charCode = s.charCodeAt(i);
+        if(charCode >= 65 && charCode <= 90){
+            result += String.fromCharCode(charCode + 32)
+    }else{
+        result +=s[i]
+    }
+    
+    }
+    return result
+};
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
