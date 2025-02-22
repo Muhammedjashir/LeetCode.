@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Given a string s, reverse the string according to the following rules:
+
+// All the characters that are not English letters remain in the same position.
+// All the English letters (lowercase or uppercase) should be reversed.
+// Return s after reversing it.
+
+
+// Example 1:
+
+// Input: s = "ab-cd"
+// Output: "dc-ba"
+// Example 2:
+
+// Input: s = "a-bC-dEf-ghIj"
+// Output: "j-Ih-gfE-dCba"
+// Example 3:
+
+// Input: s = "Test1ng-Leet=code-Q!"
+// Output: "Qedo1ct-eeLg=ntse-T!"
+
+
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+ var reverseOnlyLetters = function(s) {
+    let letters = s.split("").filter(x=>/[a-zA-Z]/.test(x)).reverse()
+    let result = []
+    let letterIndex = 0
+
+    for(let i=0;i<s.length;i++){
+        if(/[a-zA-Z]/.test(s[i])){
+            result.push(letters[letterIndex++])
+        }else{
+            result.push(s[i])
+        }
+    }
+    return result.join('')
+};
+
+    </script>
+</body>
+</html>
